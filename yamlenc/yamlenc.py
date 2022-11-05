@@ -114,7 +114,7 @@ def main():
     try:
         logging.debug("Using configuration file %s", args.conf)
         with open(args.conf, "r") as encstream:
-            enc = YamlENC(yaml.load_all(encstream))
+            enc = YamlENC(yaml.load_all(encstream, yaml.FullLoader))
     except IOError:
         logging.error("Failed to parse configuration file %s", args.conf)
         sys.exit(1)
