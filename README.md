@@ -37,12 +37,24 @@ At least _environment_ or _classes_ must be defined.
 ## script part
 May be not the best or proper way, but at least starting point for those who doesn't deal with python every year.
 ### preparing
+Installing Python packages
+
 on Ubuntu 22.04 (should work on 20.04 as well).
 ```
 apt-get install python-is-python3
+```
+
+on Centos 7:
+```
+yum install python36-PyYAML python3
+```
+
+Getting sources:
+```
 git clone ...
 cd <cloned_dir>
 ```
+
 ### installing
 Recommended is to use **Option 1.5**
 
