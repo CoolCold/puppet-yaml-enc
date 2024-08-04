@@ -36,12 +36,41 @@ At least _environment_ or _classes_ must be defined.
 # Installing
 ## script part
 May be not the best or proper way, but at least starting point for those who doesn't deal with python every year.
+### preparing
+Installing Python packages
 
-on Ubuntu 22.04 (should work on 20.04 as well):
+on Ubuntu 22.04 (should work on 20.04 as well).
 ```
 apt-get install python-is-python3
+```
+
+on Centos 7:
+```
+yum install python36-PyYAML python3
+```
+
+Getting sources:
+```
 git clone ...
 cd <cloned_dir>
+```
+
+### installing
+Recommended is to use **Option 1.5**
+
+Option 1, via `pip`, for user - i.e. for tests
+```
+python3 -m pip install --user -e .
+```
+Gonna be installed into `~/.local/bin/yamlenc`
+
+Option 1.5, via `pip` for everyone, under `root` - because your Puppetserver will need to be able to run it
+```
+python3 -m pip install -e .
+```
+
+Option 2, via `setup.py`
+```
 python setup.py install
 ```
 File gonna be installed into `/usr/local/bin/yamlenc`.
