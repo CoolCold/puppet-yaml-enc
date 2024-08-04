@@ -114,7 +114,12 @@ def main():
     try:
         logging.debug("Using configuration file %s", args.conf)
         with open(args.conf, "r") as encstream:
-            enc = YamlENC(yaml.load_all(encstream, yaml.FullLoader))
+            if int(yaml.__version__[0])>=5:
+                enc = YamlENC(yaml.load_all(encstream, yaml.FullLoader))
+            else:
+                # for older python versions, like on Centos 7/Python 3.6
+                enc = YamlENC(yaml.load_all(encstream))
+
     except IOError:
         logging.error("Failed to parse configuration file %s", args.conf)
         sys.exit(1)
