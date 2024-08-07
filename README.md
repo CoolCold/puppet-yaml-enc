@@ -66,7 +66,7 @@ Gonna be installed into `~/.local/bin/yamlenc`
 
 Option 1.5, via `pip` for everyone, under `root` - because your Puppetserver will need to be able to run it
 ```
-python3 -m pip install -e .
+python3 -m pip install .
 ```
 
 Option 2, via `setup.py`
